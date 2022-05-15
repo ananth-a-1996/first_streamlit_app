@@ -1,4 +1,5 @@
 import streamlit
+import requests
 import pandas as pd
 
 streamlit.title(' This is a snowflake demo excercise part -1')
@@ -18,3 +19,7 @@ my_fruit_list=my_fruit_list.set_index('Fruit')
 fruits_selected=streamlit.multiselect("Pick some fruits",list(my_fruit_list.index),['Avocado','Strawberries','Peach'])
 fruits_to_show=my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
+
+
+fruityvice_response=requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
