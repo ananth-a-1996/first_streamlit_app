@@ -2,6 +2,7 @@ import streamlit
 import requests
 import pandas as pd
 import snowflake.connector
+from urllib.error import URLError
 
 streamlit.title(' This is a snowflake demo excercise part -1')
 
